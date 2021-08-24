@@ -1,0 +1,29 @@
+{
+    "907": 14,
+    "first_name": "shanti",
+    "last_name": "lname",
+    "email": "abc@gmail.com",
+    "jobs": [
+        "tester",
+        "Trainer"
+    ],
+    "marks": [
+        {
+            "tamil": 90,
+            "english": 23
+        },
+        {
+            "tamil": 90,
+            "english": 23
+        }
+    ],
+    "favFoods": {
+        "breakfast": "907ly",
+        "lunch": "rice",
+        "dinner": [
+            "chapathi",
+            "milk"
+        ]
+    },
+    "id": 1028
+}

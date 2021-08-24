@@ -1,0 +1,28 @@
+{
+  "id": 14,
+  "first_name": "fname",
+  "last_name": "lname",
+  "email": "abc@gmail.com",
+  "jobs": [
+    "tester",
+    "Trainer"
+  ],
+  "marks": [
+    {
+      "tamil": 90,
+      "english": 23
+    },
+    {
+      "tamil": 90,
+      "english": 23
+    }
+  ],
+  "favFoods": {
+    "breakfast": "idly",
+    "lunch": "rice",
+    "dinner": [
+      "chapathi",
+      "milk"
+    ]
+  }
+}
