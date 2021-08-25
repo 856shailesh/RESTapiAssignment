@@ -15,7 +15,7 @@ public final class RequestBuilder { //dont want to extend this class
 
     public static RequestSpecification buildRequestForGetCalls() {
         return given()
-                .baseUri(PropertyUtils.getValue(PropertiesType.BASEURI))
+                .baseUri(PropertyUtils.getValue(PropertiesType.BASEURL))
                 .log()
                 .all();
     }

@@ -4,7 +4,7 @@ import lombok.Getter;
 
 @Getter
 public class FCwithSingleton {  //single instance of a class at a particluar point of time
-    //creational design pattern e.g JDBC and not webseriver
+    //creational design pattern e.g JDBC and not webdriver
 
     private static FCwithSingleton INSTANCE = null;
 
@@ -18,6 +18,6 @@ public class FCwithSingleton {  //single instance of a class at a particluar poi
         return INSTANCE;
     }
 
-    private final String RequestJsonFolderPath = System.getProperty("user.dir") + "/src/test/resources/jsons/";
-    private final String ResponseJsonFolderPath = System.getProperty("user.dir") + "/output/";
+    private final String requestJsonFolderPath = System.getProperty("user.dir") + "/src/test/resources/jsons/";
+    private final String responseJsonFolderPath = System.getProperty("user.dir") + "/output/";
 }

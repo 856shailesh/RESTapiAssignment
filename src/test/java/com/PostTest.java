@@ -16,6 +16,7 @@ import static com.utils.RandomUtils.*;
 
 public class PostTest {
 
+    // using Lombak
     @Test
     public static void postCallTest(){
         Employee employee = Employee
@@ -30,13 +31,14 @@ public class PostTest {
                 .post("/employees");
 
         response.prettyPrint();
-        //Assertions.assertThat(response.getStatusCode()).isEqualTo(201);
+        Assertions.assertThat(response.getStatusCode()).isEqualTo(201);
     }
+
 
     @Test
     public static void postRequestUsingExternalFile(Method method){
        String resource =  ApiUtils
-               .readJsonAndGetString(FrameworkConstants.getRequestJsonFolderPath()+method.getName())
+               .readJsonAndGetString(FrameworkConstants.getRequestJsonFolderPath()+"request.json")
                .replace("fname", RandomUtils.getFirstName())
                .replace("id",String.valueOf(RandomUtils.getId()));
 
@@ -48,15 +50,17 @@ public class PostTest {
 
         response.prettyPrint();
 
-        ApiUtils.storeStringAsJsonFile(FrameworkConstants.getResponseJsonFolderPath()+ method.getName() + "/response.json", response);
+        ApiUtils.storeStringAsJsonFile(FrameworkConstants.getResponseJsonFolderPath()+ "/response.json", response);
 
         Assertions.assertThat(response.getStatusCode()).isEqualTo(201);
     }
 
+    //Using External Builder
     @Test
-    public static void postRequestUsingExternalFileUsingSingleton(Method method){
+    public static void postRequestUsingExternalFile1(Method method){
         String resource =  ApiUtils
-                .readJsonAndGetString(FCwithSingleton.getInstance().getRequestJsonFolderPath()+"request.json")
+                .readJsonAndGetString(
+                        FCwithSingleton.getInstance().getRequestJsonFolderPath()+ "request.json")
                 .replace("fname", RandomUtils.getFirstName())
                 .replace("id",String.valueOf(RandomUtils.getId()));
 
@@ -68,12 +72,12 @@ public class PostTest {
 
         response.prettyPrint();
 
-        ApiUtils.storeStringAsJsonFile(FCwithSingleton.getInstance().getResponseJsonFolderPath()+ method.getName() + "/response.json", response);
+        ApiUtils.storeStringAsJsonFile(FCwithSingleton.getInstance().getResponseJsonFolderPath() + "/response.json", response);
 
         Assertions.assertThat(response.getStatusCode()).isEqualTo(201);
 
 
     }
 
-    
+
 }
